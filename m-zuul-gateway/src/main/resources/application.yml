@@ -1,0 +1,24 @@
+server:
+  port: 9501
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:js@eureka1:7001/eureka,http://admin:js@eureka2:7002/eureka
+    register-with-eureka: false
+spring:
+  application:
+    name: m-zuul-gateway
+zuul:
+  routes:
+    users:
+      path: /users-proxy/**
+      serviceId: m-provider-users
+#    users2:
+#      path: /users2-proxy/**
+#      url: http://localhost:8090/
+#    product:
+#      path: /product-proxy/**
+#      serviceId: m-provider-product
+#  ignored-services:
+#    "*"
+#  prefix: /js

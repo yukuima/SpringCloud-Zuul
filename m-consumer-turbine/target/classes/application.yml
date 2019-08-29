@@ -1,0 +1,11 @@
+server:
+ port: 9101
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+        defaultZone: http://admin:js@eureka1:7001/eureka,http://admin:js@eureka2:7002/eureka,http://admin:js@eureka3:7003/eureka
+
+turbine:
+  app-config: M-PROVIDER-PRODUCT,M-PROVIDER-USERS
+  cluster-name-expression: new String("default")
